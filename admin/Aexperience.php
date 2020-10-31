@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Education</title>
+    <title>Admin Experience</title>
      <!-- CSS only -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
@@ -30,12 +30,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-            <h1>Education</h1>
+            <h1>Experience</h1>
             </div>
         </div>
         <div class="row mb-3 mt-3">
             <div class="col-md-12">
-            <a href="data_edu.php" class="btn btn-primary">Input Data</a>
+            <a href="data_ex.php" class="btn btn-primary">Input Data</a>
             </div>
         </div>
         <div class="row">
@@ -44,25 +44,25 @@
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Campus</th>
-                        <th>Year</th>
-                        <th>Desc Campus</th>
-                        <th>Major Campus</th>
-                        <th>SHS</th>
-                        <th>Year</th>
-                        <th>Desc SHS</th>
-                        <th>Major SHS</th>
-                        <th>JHS</th>
-                        <th>Year</th>
-                        <th>Desc JHS</th>
-                        <th>Major JHS</th>
+                        <th>Experience 1</th>
+                        <th>Description 1</th>
+                        <th>Photo 1</th>
+                        <th>Experience 2</th>
+                        <th>Description 2</th>
+                        <th>Photo 2</th>
+                        <th>Experience 3</th>
+                        <th>Description 3</th>
+                        <th>Photo 3</th>
+                        <th>Experience 4</th>
+                        <th>Description 4</th>
+                        <th>Photo 4</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
     <?php
     //buat sql
-    $strSQL = "SELECT * FROM education";
+    $strSQL = "SELECT * FROM experience";
     $runStrSQL = mysqli_query($conn,$strSQL);
     $jmlRowData = mysqli_num_rows($runStrSQL);
     if ($jmlRowData < 0){
@@ -73,21 +73,21 @@
     ?>
                     <tr>
                         <td><?php echo $row['id']?></td>
-                        <td><?php echo $row['kampus']?></td>
-                        <td><?php echo $row['tahun_kampus']?></td>
-                        <td><?php echo $row['des_kampus']?></td>
-                        <td><?php echo $row['major_kampus']?></td>
-                        <td><?php echo $row['sma']?></td>
-                        <td><?php echo $row['tahun_sma']?></td>
-                        <td><?php echo $row['des_sma']?></td>
-                        <td><?php echo $row['major_sma']?></td>
-                        <td><?php echo $row['smp']?></td>
-                        <td><?php echo $row['tahun_smp']?></td>
-                        <td><?php echo $row['des_smp']?></td>
-                        <td><?php echo $row['major_smp']?></td>
+                        <td><?php echo $row['ex1']?></td>
+                        <td><?php echo $row['des1']?></td>
+                        <td><?php echo $row['gambar1']?></td>
+                        <td><?php echo $row['ex2']?></td>
+                        <td><?php echo $row['des2']?></td>
+                        <td><?php echo $row['gambar2']?></td>
+                        <td><?php echo $row['ex3']?></td>
+                        <td><?php echo $row['des3']?></td>
+                        <td><?php echo $row['gambar3']?></td>
+                        <td><?php echo $row['ex4']?></td>
+                        <td><?php echo $row['des4']?></td>
+                        <td><?php echo $row['gambar4']?></td>
                         <td>
-                            <a href="edit_edu.php?id=<?php echo $row['id'] ?>" class="btn btn-info">Edit</a>
-                            <a class="btn btn-danger delete_data" id="<?php echo $row['id']?>-<?php echo $row['kampus']?>-<?php echo $row['tahun_kampus']?>-<?php echo $row['des_kampus']?>-<?php echo $row['major_kampus']?>-<?php echo $row['sma']?>-<?php echo $row['tahun_sma']?>-<?php echo $row['des_sma']?>-<?php echo $row['major_sma']?>-<?php echo $row['smp']?>-<?php echo $row['tahun_smp']?>-<?php echo $row['des_smp']?>-<?php echo $row['major_smp']?>" href="javascript:void(0);">Hapus</a>
+                            <a href="edit_ex.php?id=<?php echo $row['id'] ?>" class="btn btn-info">Edit</a>
+                            <a class="btn btn-danger delete_data" id="<?php echo $row['id']?>-<?php echo $row['ex1']?>-<?php echo $row['des1']?>-<?php echo $row['gambar1']?>-<?php echo $row['ex2']?>-<?php echo $row['des2']?>-<?php echo $row['gambar2']?>-<?php echo $row['ex3']?>-<?php echo $row['des3']?>-<?php echo $row['gambar3']?>-<?php echo $row['ex4']?>-<?php echo $row['des4']?>-<?php echo $row['gambar4']?>" href="javascript:void(0);">Hapus</a>
                         </td>
                     </tr>
     <?php
@@ -122,20 +122,20 @@
             var id = $(this).prop('id');
             var splited = id.split("-");
             var pid = splited[0];
-            var kampus = splited[1];
-            var tahun_kampus = splited[2];
-            var des_kampus = splited[3];
-            var major_kampus = splited[4];
-            var sma = splited[5];
-            var tahun_sma = splited[6];
-            var des_sma = splited[7];
-            var major_sma = splited[8];
-            var smp = splited[9];
-            var tahun_smp = splited[10];
-            var des_smp = splited[11];
-            var major_smp = splited[12];
+            var ex1 = splited[1];
+            var des1 = splited[2];
+            var gambar1 = splited[3];
+            var ex2 = splited[4];
+            var des2 = splited[5];
+            var gambar2 = splited[6];
+            var ex3 = splited[7];
+            var des3 = splited[8];
+            var gambar3 = splited[9];
+            var ex4 = splited[10];
+            var des4 = splited[11];
+            var gambar4 = splited[12];
             var parent = $(this).parent("td").parent("tr");
-            var mes = 'Apakah anda ingin menghapus data ini ? <br><pre><p class="text-primary"><strong>Campus : ' + kampus + '</strong></p><p class="text-primary"><strong>Year : ' + tahun_kampus + '</strong></p><p class="text-primary"><strong>Desc Campus : ' + des_kampus + '</strong></p><p class="text-primary"><strong>Major : ' + major_kampus + '</strong></p><p class="text-primary"><strong>SHS : ' + sma + '</strong></p><p class="text-primary"><strong>Year : ' + tahun_sma + '</strong></p><p class="text-primary"><strong>Desc SMA: ' + des_sma + '</strong></p><p class="text-primary"><strong>Major : ' + major_sma + '</strong></p><p class="text-primary"><strong>JHS : ' + smp + '</strong></p><p class="text-primary"><strong>Year : ' + tahun_smp + '</strong></p><p class="text-primary"><strong>Desc JHS : ' + des_smp + '</strong></p><p class="text-primary"><strong>Major : ' + major_smp + '</strong></p></pre>';
+            var mes = 'Apakah anda ingin menghapus data ini ? <br><pre><p class="text-primary"><strong>Campus : ' + ex1 + '</strong></p><p class="text-primary"><strong>Year : ' + des1 + '</strong></p><p class="text-primary"><strong>Desc Campus : ' + gambar1 + '</strong></p><p class="text-primary"><strong>Major : ' + ex2 + '</strong></p><p class="text-primary"><strong>SHS : ' + sma + '</strong></p><p class="text-primary"><strong>Year : ' + des2 + '</strong></p><p class="text-primary"><strong>Desc SMA: ' + gambar2 + '</strong></p><p class="text-primary"><strong>Major : ' + ex3 + '</strong></p><p class="text-primary"><strong>JHS : ' + des3 + '</strong></p><p class="text-primary"><strong>Year : ' + gambar3 + '</strong></p><p class="text-primary"><strong>Desc JHS : ' + ex4 + '</strong></p><p class="text-primary"><strong>Major : ' + des4 + '</strong></p></pre>';
             bootbox.dialog({
                 message: mes,
                 title: "Hapus Data yang dipilih !",
@@ -152,7 +152,7 @@
                         label: "Remove",
                         className: "btn-danger",
                         callback: function () {
-                            $.post('hapus_edu.php', { 'delete': pid })
+                            $.post('hapus_ex.php', { 'delete': pid })
                                 .done(function (response) {
                                     bootbox.alert(response);
                                     parent.fadeOut('slow');

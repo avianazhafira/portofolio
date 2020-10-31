@@ -9,43 +9,32 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <style>
-        /* .experience-area{
-            padding: 7rem 2rem;
+        .experience{
+            border: 1px solid black;
+            padding: 25px 10px;
+            background-color: white;
         }
-
-        .experience-title{
-            padding: 0 14rem;
-        }
-
-        .experience-title h1{
-            font-size: 35px;
-        }
-
-        .experience-area .experience{
-            background: rgba(248, 252, 253, 0.973);
-            padding: 2rem 0;
-            width: 16rem;
-            margin: 3rem .3rem;
-            transition: box-shadow .7s ease;
-        }
-
-        .experience-area .experience:hover{
-            box-shadow: var(--box-shadow);
-        } */
     </style>
 
 </head>
 <body style="background-color:#336699">
     <?php
         include_once "header.php";
+        include_once "koneksi.php";
+        //buat sql
+        $strSQL = "SELECT * FROM experience";
+        $runStrSQL = mysqli_query($conn,$strSQL);
+        $jmlRowData = mysqli_num_rows($runStrSQL);
+        if ($jmlRowData < 0){
+            echo "<tr><td colspan='4'>Data Tidak Terdaftar Dalam Database</td></tr>";
+        }
+        else{
+            while($row = mysqli_fetch_assoc($runStrSQL)){
     ?>
     <div class="container experience-area">
                 <div class="row">
                     <div class="col-lg-12 text-center experience-title">
-                        <h1 class="text-uppercase title-text">Experience</h1>
-                        <p class="para">
-                            There are many experience that I have, but these are the new one.
-                        </p>
+                        <h1 class="text-uppercase title-text py-5">Experience</h1>
                     </div>
                 </div>
                 <div class="container experience-list">
@@ -53,14 +42,12 @@
                         <div class="col-lg-3 col-md-6 col-sm-12">
                             <div class="experience">
                                 <div class="experience-img text-center py-4">
-                                    <img src="./img/experience/s1.png" alt="experience-1">
+                                    <img src="images/<?php echo $row['gambar1']?>" alt="experience-1">
                                 </div>
                                 <div class="card-body text-center">
-                                    <h5 class="card-title text-uppercase font-roboto">Wp developer</h5>
+                                    <h5 class="card-title text-uppercase font-roboto"><?php echo $row['ex1']?></h5>
                                     <p class="card-text text-secondary">
-                                        Some quick example text to build on the card
-                                        title and make up
-                                        the bulk of the card's content.
+                                    <?php echo $row['des1']?>
                                     </p>
                                 </div>
                             </div>
@@ -68,14 +55,12 @@
                         <div class="col-lg-3 col-md-6 col-sm-12">
                             <div class="experience">
                                 <div class="experience-img text-center py-4">
-                                    <img src="./img/experience/s2.png" alt="experience-2">
+                                    <img src="images/<?php echo $row['gambar2']?>" alt="experience-2">
                                 </div>
                                 <div class="card-body text-center">
-                                    <h5 class="card-title text-uppercase font-roboto">Android Developer</h5>
+                                    <h5 class="card-title text-uppercase font-roboto"><?php echo $row['ex2']?></h5>
                                     <p class="card-text text-secondary">
-                                        Some quick example text to build on the card
-                                        title and make up
-                                        the bulk of the card's content.
+                                    <?php echo $row['des2']?>
                                     </p>
                                 </div>
                             </div>
@@ -83,14 +68,12 @@
                         <div class="col-lg-3 col-md-6 col-sm-12">
                             <div class="experience">
                                 <div class="experience-img text-center py-4">
-                                    <img src="./img/experience/s3.png" alt="experience-3">
+                                    <img src="images/<?php echo $row['gambar3']?>" alt="experience-3">
                                 </div>
                                 <div class="card-body text-center">
-                                    <h5 class="card-title text-uppercase font-roboto">Java Developer</h5>
+                                    <h5 class="card-title text-uppercase font-roboto"><?php echo $row['ex3']?></h5>
                                     <p class="card-text text-secondary">
-                                        Some quick example text to build on the card
-                                        title and make up
-                                        the bulk of the card's content.
+                                    <?php echo $row['des3']?>
                                     </p>
                                 </div>
                             </div>
@@ -98,14 +81,12 @@
                         <div class="col-lg-3 col-md-6 col-sm-12">
                             <div class="experience">
                                 <div class="experience-img text-center py-4">
-                                    <img src="./img/experience/s4.png" alt="experience-4">
+                                    <img src="images/<?php echo $row['gambar4']?>" alt="experience-4">
                                 </div>
                                 <div class="card-body text-center">
-                                    <h5 class="card-title text-uppercase font-roboto">Database Design</h5>
+                                    <h5 class="card-title text-uppercase font-roboto"><?php echo $row['ex4']?></h5>
                                     <p class="card-text text-secondary">
-                                        Some quick example text to build on the card
-                                        title and make up
-                                        the bulk of the card's content.
+                                    <?php echo $row['des4']?>
                                     </p>
                                 </div>
                             </div>
@@ -116,6 +97,8 @@
 
 
     <?php
+            }
+        }
         include_once "footer.php";
     ?>
     <!-- JS, Popper.js, and jQuery -->
