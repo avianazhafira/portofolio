@@ -9,16 +9,76 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
      <style>
+     * {box-sizing: border-box}
+
         .row1{
             font-size : 20px;
             color:white;
             font-family: "Times New Roman", Times, serif;
         }
-        .img{
-            height:350px;
-            margin:auto;
-            display:block;
+
+     </style>
+</head>
+<body style="background-color:#336699">
+    <?php
+        include_once "header.php";
+        include_once "koneksi.php";
+        //buat sql
+        $strSQL = "SELECT * FROM education";
+        $runStrSQL = mysqli_query($conn,$strSQL);
+        $jmlRowData = mysqli_num_rows($runStrSQL);
+        if ($jmlRowData < 0){
+            echo "<tr><td colspan='4'>Data Tidak Terdaftar Dalam Database</td></tr>";
         }
+        else{
+            while($row = mysqli_fetch_assoc($runStrSQL)){
+    ?>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col md-12 about-title" style="color:white;">
+                <h1 class="text-uppercase pt-5">
+                 <span class="center"> Education </span> 
+                </h1>
+
+                <div class="row1"> 
+                <i class="fa fa-graduation-cap" aria-hidden="true"><?php echo $row['kampus']?> | <?php echo $row['tahun_kampus']?></i>
+                <p style="margin-left:25px">
+                <?php echo $row['des_kampus']?> <br>
+                Major : <?php echo $row['major_kampus']?> 
+                </p>
+                </div>
+
+                <div class="row1"> 
+                <i class="fa fa-graduation-cap" aria-hidden="true"><?php echo $row['sma']?> | <?php echo $row['tahun_sma']?></i>
+                <p style="margin-left:25px">
+                <?php echo $row['des_sma']?> <br>
+                Major : <?php echo $row['major_sma']?> 
+                </p>
+                </div>
+
+                <div class="row1"> 
+                <i class="fa fa-graduation-cap" aria-hidden="true"><?php echo $row['smp']?> | <?php echo $row['tahun_smp']?></i>
+                <p style="margin-left:25px">
+                <?php echo $row['des_smp']?> <br>
+                Major : <?php echo $row['major_smp']?>
+                </p>
+                </div>
+            </div>
+    <?php
+            }
+        }
+
+        //buat sql
+        $strSQL = "SELECT * FROM skills";
+        $runStrSQL = mysqli_query($conn,$strSQL);
+        $jmlRowData = mysqli_num_rows($runStrSQL);
+        if ($jmlRowData < 0){
+            echo "<tr><td colspan='4'>Data Tidak Terdaftar Dalam Database</td></tr>";
+        }
+        else{
+            while($row = mysqli_fetch_assoc($runStrSQL)){
+    ?>
+    <style>
         * {box-sizing: border-box}
 
         .container {
@@ -28,66 +88,59 @@
 
         .skills {
             text-align: right;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
             color: white;
         }
 
-            .html {width: 90%; background-color: #4CAF50;}
-            .css {width: 80%; background-color: #2196F3;}
-            .js {width: 65%; background-color: #f44336;}
-            .php {width: 60%; background-color: #808080;}
+            .html {width: <?php echo $row['html']?>%; background-color: #4CAF50;}
+            .css {width: <?php echo $row['css']?>%; background-color: #4CAF50;}
+            .php {width: <?php echo $row['php']?>%; background-color: #808080;}
+            .ms {width: <?php echo $row['ms']?>%; background-color: #f44336;}
+            .tm {width: <?php echo $row['tm']?>%; background-color: #4CAF50;}
+            .ps {width: <?php echo $row['ps']?>%; background-color: #2196F3;}
+    </style>
 
-     </style>
-</head>
-<body style="background-color:#336699">
-    <?php
-        include_once "header.php";
-    ?>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6 col md-12 about-title" style="color:white;">
-                <h1 class="text-uppercase pt-5">
-                 <span class="center"> Education </span> 
-                </h1>
-
-                <div class="row1 py-4 w-75"> 
-                <i class="fa fa-graduation-cap" aria-hidden="true">Pembangunan Jaya University</i>
-                </div>
-
-                <div class="row1 py-4 w-75"> 
-                <i class="fa fa-graduation-cap" aria-hidden="true">Senior High School</i>
-                </div>
-
-                <div class="row1 py-4 w-75"> 
-                <i class="fa fa-graduation-cap" aria-hidden="true">Junior High School</i>
-                </div>
-
-            </div>
             <div class="col-lg-6 col md-12 about-title" style="color:white;">
                 <h1 class="text-uppercase pt-5">
                  <span> Skills </span> 
                 </h1>
                 <p>HTML</p>
-                <div class="container">
-                <div class="skills html">90%</div>
+                <div class="container px-0">
+                <div class="skills html"><?php echo $row['html']?>%</div>
                 </div>
 
                 <p>CSS</p>
-                <div class="container">
-                <div class="skills css">80%</div>
-                </div>
-
-                <p>JavaScript</p>
-                <div class="container">
-                <div class="skills js">65%</div>
+                <div class="container px-0">
+                <div class="skills css"><?php echo $row['css']?>%</div>
                 </div>
 
                 <p>PHP</p>
-                <div class="container">
-                <div class="skills php">60%</div>
+                <div class="container px-0">
+                <div class="skills php"><?php echo $row['php']?>%</div>
+                </div>
+
+
+                <p>Microsoft Word, Excel, Powerpoint</p>
+                <div class="container px-0">
+                <div class="skills ms"><?php echo $row['ms']?>%</div>
+                </div>
+
+                <p>Teamwork</p>
+                <div class="container px-0">
+                <div class="skills tm"><?php echo $row['tm']?>%</div>
+                </div>
+
+                <p>Public Speaking</p>
+                <div class="container px-0">
+                <div class="skills ps"><?php echo $row['ps']?>%</div>
                 </div>
             </div>
+    <?php
+            }
+        }
+    ?>
+
         </div>
     </div>
     <?php

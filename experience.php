@@ -8,27 +8,52 @@
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <style>
+        /* .experience-area{
+            padding: 7rem 2rem;
+        }
+
+        .experience-title{
+            padding: 0 14rem;
+        }
+
+        .experience-title h1{
+            font-size: 35px;
+        }
+
+        .experience-area .experience{
+            background: rgba(248, 252, 253, 0.973);
+            padding: 2rem 0;
+            width: 16rem;
+            margin: 3rem .3rem;
+            transition: box-shadow .7s ease;
+        }
+
+        .experience-area .experience:hover{
+            box-shadow: var(--box-shadow);
+        } */
+    </style>
+
 </head>
 <body style="background-color:#336699">
     <?php
         include_once "header.php";
     ?>
-    <div class="container">
+    <div class="container experience-area">
                 <div class="row">
-                    <div class="col-lg-12 text-center services-title">
-                        <h1 class="text-uppercase title-text">Services Offers</h1>
+                    <div class="col-lg-12 text-center experience-title">
+                        <h1 class="text-uppercase title-text">Experience</h1>
                         <p class="para">
-                            There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form, by injected humour
+                            There are many experience that I have, but these are the new one.
                         </p>
                     </div>
                 </div>
-                <div class="container services-list">
+                <div class="container experience-list">
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="services">
-                                <div class="sevices-img text-center py-4">
-                                    <img src="./img/services/s1.png" alt="Services-1">
+                            <div class="experience">
+                                <div class="experience-img text-center py-4">
+                                    <img src="./img/experience/s1.png" alt="experience-1">
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title text-uppercase font-roboto">Wp developer</h5>
@@ -41,9 +66,9 @@
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="services">
-                                <div class="sevices-img text-center py-4">
-                                    <img src="./img/services/s2.png" alt="Services-2">
+                            <div class="experience">
+                                <div class="experience-img text-center py-4">
+                                    <img src="./img/experience/s2.png" alt="experience-2">
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title text-uppercase font-roboto">Android Developer</h5>
@@ -56,9 +81,9 @@
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="services">
-                                <div class="sevices-img text-center py-4">
-                                    <img src="./img/services/s3.png" alt="Services-3">
+                            <div class="experience">
+                                <div class="experience-img text-center py-4">
+                                    <img src="./img/experience/s3.png" alt="experience-3">
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title text-uppercase font-roboto">Java Developer</h5>
@@ -71,9 +96,9 @@
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="services">
-                                <div class="sevices-img text-center py-4">
-                                    <img src="./img/services/s4.png" alt="Services-4">
+                            <div class="experience">
+                                <div class="experience-img text-center py-4">
+                                    <img src="./img/experience/s4.png" alt="experience-4">
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title text-uppercase font-roboto">Database Design</h5>

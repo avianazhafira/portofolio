@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin About</title>
+    <title>Admin Skills</title>
      <!-- CSS only -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
@@ -30,12 +30,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-            <h1>About</h1>
+            <h1>Skills</h1>
             </div>
         </div>
         <div class="row mb-3 mt-3">
             <div class="col-md-12">
-            <a href="data_about.php" class="btn btn-primary">Input Data</a>
+            <a href="data_skills.php" class="btn btn-primary">Input Data</a>
             </div>
         </div>
         <div class="row">
@@ -44,20 +44,19 @@
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Description</th>
-                        <th>Name</th>
-                        <th>Date Of Birth</th>
-                        <th>Address</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Photo</th>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                        <th>PHP</th>
+                        <th>Microsoft</th>
+                        <th>Teamwork</th>
+                        <th>Public Speaking</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
     <?php
     //buat sql
-    $strSQL = "SELECT * FROM about";
+    $strSQL = "SELECT * FROM skills";
     $runStrSQL = mysqli_query($conn,$strSQL);
     $jmlRowData = mysqli_num_rows($runStrSQL);
     if ($jmlRowData < 0){
@@ -68,16 +67,15 @@
     ?>
                     <tr>
                         <td><?php echo $row['id']?></td>
-                        <td><?php echo $row['deskripsi']?></td>
-                        <td><?php echo $row['nama']?></td>
-                        <td><?php echo $row['ttl']?></td>
-                        <td><?php echo $row['alamat']?></td>
-                        <td><?php echo $row['email']?></td>
-                        <td><?php echo $row['telepon']?></td>
-                        <td><img class="img=thumbnail" style="height:60px" src="images/<?php echo $row["foto"]; ?>"></td>
+                        <td><?php echo $row['html']?></td>
+                        <td><?php echo $row['css']?></td>
+                        <td><?php echo $row['php']?></td>
+                        <td><?php echo $row['ms']?></td>
+                        <td><?php echo $row['tm']?></td>
+                        <td><?php echo $row['ps']?></td>
                         <td>
-                            <a href="edit_about.php?id=<?php echo $row['id'] ?>" class="btn btn-info">Edit</a>
-                            <a class="btn btn-danger delete_data" id="<?php echo $row['id']?>-<?php echo $row['deskripsi']?>-<?php echo $row['nama']?>-<?php echo $row['ttl']?>-<?php echo $row['alamat']?>-<?php echo $row['email']?>-<?php echo $row['telepon']?>-<?php echo $row['foto']?>" href="javascript:void(0);">Hapus</a>
+                            <a href="edit_skills.php?id=<?php echo $row['id'] ?>" class="btn btn-info">Edit</a>
+                            <a class="btn btn-danger delete_data" id="<?php echo $row['id']?>-<?php echo $row['html']?>-<?php echo $row['css']?>-<?php echo $row['php']?>-<?php echo $row['ms']?>-<?php echo $row['tm']?>-<?php echo $row['ps']?>" href="javascript:void(0);">Hapus</a>
                         </td>
                     </tr>
     <?php
@@ -112,15 +110,14 @@
             var id = $(this).prop('id');
             var splited = id.split("-");
             var pid = splited[0];
-            var deskripsi = splited[1];
-            var nama = splited[2];
-            var ttl = splited[3];
-            var alamat = splited[4];
-            var email = splited[5];
-            var telepon = splited[6];
-            var foto = splited[7];
+            var html = splited[1];
+            var css = splited[2];
+            var php = splited[3];
+            var ms = splited[4];
+            var tm = splited[5];
+            var ps = splited[6];
             var parent = $(this).parent("td").parent("tr");
-            var mes = 'Apakah anda ingin menghapus data ini ? <br><pre><p class="text-primary"><strong>Description : ' + deskripsi + '</strong></p><p class="text-primary"><strong>Name : ' + nama + '</strong></p><p class="text-primary"><strong>Date of Birth : ' + ttl + '</strong></p><p class="text-primary"><strong>Address : ' + alamat + '</strong></p><p class="text-primary"><strong>Email : ' + email + '</strong></p><p class="text-primary"><strong>Phone : ' + telepon + '</strong></p><p class="text-primary"><strong>Photo: ' + foto + '</strong></p></pre>';
+            var mes = 'Apakah anda ingin menghapus data ini ? <br><pre><p class="text-primary"><strong>HTML : ' + html + '</strong></p><p class="text-primary"><strong>CSS : ' + css + '</strong></p><p class="text-primary"><strong>PHP : ' + php + '</strong></p><p class="text-primary"><strong>Microsoft : ' + ms + '</strong></p><p class="text-primary"><strong>Teamwork : ' + tm + '</strong></p><p class="text-primary"><strong>Public Speaking : ' + ps + '</strong></p></pre>';
             bootbox.dialog({
                 message: mes,
                 title: "Hapus Data yang dipilih !",
@@ -137,7 +134,7 @@
                         label: "Remove",
                         className: "btn-danger",
                         callback: function () {
-                            $.post('hapus_about.php', { 'delete': pid })
+                            $.post('hapus_skills.php', { 'delete': pid })
                                 .done(function (response) {
                                     bootbox.alert(response);
                                     parent.fadeOut('slow');
