@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Education</title>
+    <title>Edit Experience</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
@@ -214,7 +214,7 @@
             $('#des3_').text(des3);
             $('#gambar3_').text(gambar3);
             $('#ex4_').text(ex4);
-            $('#des_gambar3_').text(des_gambar3);
+            $('#des4_').text(des4);
             $('#gambar4_').text(gambar4);
 
             //buka modal

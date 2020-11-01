@@ -9,13 +9,13 @@
         <a class="nav-link" href="about.php">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="resume.php">Resume</a>
+        <a class="nav-link" href="skills.php">Skills</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="experience.php">Experience</a>
       </li> 
       <li class="nav-item">
-        <a class="nav-link" href="project.php">Project</a>
+        <a class="nav-link" href="education.php">Education</a>
       </li> 
       <li class="nav-item">
         <a class="nav-link" href="contact.php">Contact</a>

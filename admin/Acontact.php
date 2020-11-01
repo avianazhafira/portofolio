@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Experience</title>
+    <title>Admin Contact</title>
      <!-- CSS only -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
@@ -30,12 +30,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-            <h1>Experience</h1>
-            </div>
-        </div>
-        <div class="row mb-3 mt-3">
-            <div class="col-md-12">
-            <a href="data_ex.php" class="btn btn-primary">Input Data</a>
+            <h1>Contact</h1>
             </div>
         </div>
         <div class="row">
@@ -43,26 +38,17 @@
             <table id="listtable" class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Experience 1</th>
-                        <th>Description 1</th>
-                        <th>Photo 1</th>
-                        <th>Experience 2</th>
-                        <th>Description 2</th>
-                        <th>Photo 2</th>
-                        <th>Experience 3</th>
-                        <th>Description 3</th>
-                        <th>Photo 3</th>
-                        <th>Experience 4</th>
-                        <th>Description 4</th>
-                        <th>Photo 4</th>
+                        <th>Email</th>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Messages</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
     <?php
     //buat sql
-    $strSQL = "SELECT * FROM experience";
+    $strSQL = "SELECT * FROM contact";
     $runStrSQL = mysqli_query($conn,$strSQL);
     $jmlRowData = mysqli_num_rows($runStrSQL);
     if ($jmlRowData < 0){
@@ -72,22 +58,12 @@
         while($row = mysqli_fetch_assoc($runStrSQL)){
     ?>
                     <tr>
-                        <td><?php echo $row['id']?></td>
-                        <td><?php echo $row['ex1']?></td>
-                        <td><?php echo $row['des1']?></td>
-                        <td><img class="img=thumbnail" style="height:60px" src="../images/<?php echo $row["gambar1"]; ?>"></td>
-                        <td><?php echo $row['ex2']?></td>
-                        <td><?php echo $row['des2']?></td>
-                        <td><img class="img=thumbnail" style="height:60px" src="../images/<?php echo $row["gambar2"]; ?>"></td>
-                        <td><?php echo $row['ex3']?></td>
-                        <td><?php echo $row['des3']?></td>
-                        <td><img class="img=thumbnail" style="height:60px" src="../images/<?php echo $row["gambar3"]; ?>"></td>
-                        <td><?php echo $row['ex4']?></td>
-                        <td><?php echo $row['des4']?></td>
-                        <td><img class="img=thumbnail" style="height:60px" src="../images/<?php echo $row["gambar4"]; ?>"></td>
+                        <td><?php echo $row['email']?></td>
+                        <td><?php echo $row['nama']?></td>
+                        <td><?php echo $row['subjek']?></td>
+                        <td><?php echo $row['isi']?></td>
                         <td>
-                            <a href="edit_ex.php?id=<?php echo $row['id'] ?>" class="btn btn-info">Edit</a>
-                            <a class="btn btn-danger delete_data" id="<?php echo $row['id']?>-<?php echo $row['ex1']?>-<?php echo $row['des1']?>-<?php echo $row['gambar1']?>-<?php echo $row['ex2']?>-<?php echo $row['des2']?>-<?php echo $row['gambar2']?>-<?php echo $row['ex3']?>-<?php echo $row['des3']?>-<?php echo $row['gambar3']?>-<?php echo $row['ex4']?>-<?php echo $row['des4']?>-<?php echo $row['gambar4']?>" href="javascript:void(0);">Hapus</a>
+                            <a class="btn btn-danger delete_data" email="<?php echo $row['email']?>-<?php echo $row['nama']?>-<?php echo $row['subjek']?>-<?php echo $row['isi']?>" href="javascript:void(0);">Hapus</a>
                         </td>
                     </tr>
     <?php
@@ -121,21 +97,12 @@
             e.preventDefault();
             var id = $(this).prop('id');
             var splited = id.split("-");
-            var pid = splited[0];
-            var ex1 = splited[1];
-            var des1 = splited[2];
-            var gambar1 = splited[3];
-            var ex2 = splited[4];
-            var des2 = splited[5];
-            var gambar2 = splited[6];
-            var ex3 = splited[7];
-            var des3 = splited[8];
-            var gambar3 = splited[9];
-            var ex4 = splited[10];
-            var des4 = splited[11];
-            var gambar4 = splited[12];
+            var pemail = splited[0];
+            var nama = splited[1];
+            var subjek = splited[2];
+            var isi = splited[3];
             var parent = $(this).parent("td").parent("tr");
-            var mes = 'Apakah anda ingin menghapus data ini ? <br><pre><p class="text-primary"><strong>Experience 1 : ' + ex1 + '</strong></p><p class="text-primary"><strong>Desc 1 : ' + des1 + '</strong></p><p class="text-primary"><strong>Photo 1 : ' + gambar1 + '</strong></p><p class="text-primary"><strong>Experience 2 : ' + ex2 + '</strong></p><p class="text-primary"><strong>Desc 2 : ' + des2 + '</strong></p><p class="text-primary"><strong>Photo 2: ' + gambar2 + '</strong></p><p class="text-primary"><strong>Experience 3 : ' + ex3 + '</strong></p><p class="text-primary"><strong>Desc 3 : ' + des3 + '</strong></p><p class="text-primary"><strong>Photo 3 : ' + gambar3 + '</strong></p><p class="text-primary"><strong>Experience 4 : ' + ex4 + '</strong></p><p class="text-primary"><strong>Desc 4 : ' + des4 + '</strong></p><p class="text-primary"><strong>photo 4 : ' + gambar4 + '</strong></p></pre>';
+            var mes = 'Apakah anda ingin menghapus data ini ? <br><pre><p class="text-primary"><strong>Name : ' + nama + '</strong></p><p class="text-primary"><strong>Subject : ' + subjek + '</strong></p><p class="text-primary"><strong>Address : ' + isi + '</strong></p></pre>';
             bootbox.dialog({
                 message: mes,
                 title: "Hapus Data yang dipilih !",
@@ -152,7 +119,7 @@
                         label: "Remove",
                         className: "btn-danger",
                         callback: function () {
-                            $.post('hapus_ex.php', { 'delete': pid })
+                            $.post('hapus_contact.php', { 'delete': pemail })
                                 .done(function (response) {
                                     bootbox.alert(response);
                                     parent.fadeOut('slow');

@@ -16,10 +16,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="Aexperience.php">Experience</a>
-      </li> 
-      <li class="nav-item">
-        <a class="nav-link" href="Aproject.php">Project</a>
-      </li> 
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="Acontact.php">Contact</a>
       </li>    

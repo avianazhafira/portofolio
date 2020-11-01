@@ -19,7 +19,7 @@
         $des1 = $_POST['des1'];
         $gambar1 = $_POST['gambar1'];
         $ex2 = $_POST['ex2']; 
-        $sma = $_POST['sma']; 
+        $des2 = $_POST['des2']; 
         $gambar2 = $_POST['gambar2']; 
         $ex3 = $_POST['ex3']; 
         $des3 = $_POST['des3'];
@@ -29,8 +29,8 @@
         $gambar4 = $_POST['gambar4'];
 
          //buat koneksi
-         $strsql = "INSERT INTO education (id, kampus, tahun_kampus, des_kampus, major_kampus, sma, tahun_sma, des_sma, major_sma, smp, tahun_smp, des_smp, major_smp) 
-         VALUES ('$id','$kampus','$tahun_kampus','$des_kampus','$major_kampus','$sma','$tahun_sma','$des_sma','$major_sma','$smp','$tahun_smp','$des_smp','$major_smp')";
+         $strsql = "INSERT INTO experience (id, ex1, des1, gambar1, ex2, des2, gambar2, ex3, des3, gambar3, ex4, des4, gambar4) 
+         VALUES ('$id','$ex1','$des1','$gambar1','$ex2','$des2','$gambar2','$ex3','$des3','$gambar3','$ex4','$des4','$gambar4')";
          
          $runSQL = mysqli_query($conn,$strsql);        
          if ($runSQL) {
@@ -61,52 +61,52 @@
                                 <div class="col-6"><span id="id_"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><b>Campus</b></div>
-                                <div class="col-6"><span id="kampus_"></span></div>
+                                <div class="col-6"><b>Experience 1</b></div>
+                                <div class="col-6"><span id="ex1_"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><b>Year</b></div>
-                                <div class="col-6"><span id="tahun_kampus_"></span></div>
+                                <div class="col-6"><b>Description 1</b></div>
+                                <div class="col-6"><span id="des1_"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><b>Desc Campus</b></div>
-                                <div class="col-6"><span id="des_kampus_"></span></div>
+                                <div class="col-6"><b>Photo 1</b></div>
+                                <div class="col-6"><span id="gambar1_"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><b>Major</b></div>
-                                <div class="col-6"><span id="major_kampus_"></span></div>
+                                <div class="col-6"><b>Experience 2</b></div>
+                                <div class="col-6"><span id="ex2_"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><b>SHS</b></div>
-                                <div class="col-6"><span id="sma_"></span></div>
+                                <div class="col-6"><b>Description 2</b></div>
+                                <div class="col-6"><span id="des2_"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><b>Year</b></div>
-                                <div class="col-6"><span id="tahun_sma_"></span></div>
+                                <div class="col-6"><b>Photo 2</b></div>
+                                <div class="col-6"><span id="gambar2_"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><b>Desc SHS</b></div>
-                                <div class="col-6"><span id="des_sma_"></span></div>
+                                <div class="col-6"><b>Experience 3</b></div>
+                                <div class="col-6"><span id="ex3_"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><b>Major</b></div>
-                                <div class="col-6"><span id="major_sma_"></span></div>
+                                <div class="col-6"><b>Description 3</b></div>
+                                <div class="col-6"><span id="des3_"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><b>JHS</b></div>
-                                <div class="col-6"><span id="smp_"></span></div>
+                                <div class="col-6"><b>Photo 3</b></div>
+                                <div class="col-6"><span id="gambar3_"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><b>Year</b></div>
-                                <div class="col-6"><span id="tahun_smp_"></span></div>
+                                <div class="col-6"><b>Experience 4</b></div>
+                                <div class="col-6"><span id="ex4_"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><b>Desc JHS</b></div>
-                                <div class="col-6"><span id="des_smp_"></span></div>
+                                <div class="col-6"><b>Description 4</b></div>
+                                <div class="col-6"><span id="des4_"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><b>Major</b></div>
-                                <div class="col-6"><span id="major_smp_"></span></div>
+                                <div class="col-6"><b>Photo 4</b></div>
+                                <div class="col-6"><span id="gambar4_"></span></div>
                             </div>
                         </div>
                     </div>
@@ -140,58 +140,58 @@
             }
         
         ?>
-        <form id="myform" method="post" action="data_edu.php">
+        <form id="myform" method="post" action="data_ex.php">
             <div class="form-group">
                 <label>Id</label>
                 <input id="id" class="form-control" type="text" name="id">
             </div>
             <div class="form-group">
-                <label>Campus</label>
-                <input id="kampus" class="form-control" type="text" name="kampus">
+                <label>Experience 1</label>
+                <input id="ex1" class="form-control" type="text" name="ex1">
             </div>
             <div class="form-group">
-                <label>Year</label>
-                <input id="tahun_kampus" class="form-control" type="text" name="tahun_kampus">
+                <label>Description 1</label>
+                <input id="des1" class="form-control" type="text" name="des1">
             </div>
             <div class="form-group">
-                <label>Desc Campus</label>
-                <input id="des_kampus" class="form-control" type="text" name="des_kampus">
+                <label>Photo 1</label>
+                <input id="gambar1" class="form-control" type="text" name="gambar1">
             </div>
             <div class="form-group">
-                <label>Major</label>
-                <input id="major_kampus" class="form-control" type="text" name="major_kampus">
+                <label>Experience 2</label>
+                <input id="ex2" class="form-control" type="text" name="ex2">
             </div>      
             <div class="form-group">
-                <label>SHS</label>
-                <input id="sma" class="form-control" type="text" name="sma">
+                <label>Description 2</label>
+                <input id="des2" class="form-control" type="text" name="des2">
             </div>   
             <div class="form-group">
-                <label>Year</label>
-                <input id="tahun_sma" class="form-control" type="text" name="tahun_sma">
+                <label>Photo 2</label>
+                <input id="gambar2" class="form-control" type="text" name="gambar2">
             </div>   
             <div class="form-group">
-                <label>Desc SHS</label>
-                <input id="des_sma" class="form-control" type="text" name="des_sma">
+                <label>Experience 3</label>
+                <input id="ex3" class="form-control" type="text" name="ex3">
             </div>     
             <div class="form-group">
-                <label>Major</label>
-                <input id="major_sma" class="form-control" type="text" name="major_sma">
+                <label>Description 3</label>
+                <input id="des3" class="form-control" type="text" name="des3">
             </div>      
             <div class="form-group">
-                <label>JHS</label>
-                <input id="smp" class="form-control" type="text" name="smp">
+                <label>Photo 3</label>
+                <input id="gambar3" class="form-control" type="text" name="gambar3">
             </div>   
             <div class="form-group">
-                <label>Year</label>
-                <input id="tahun_smp" class="form-control" type="text" name="tahun_smp">
+                <label>Experience 4</label>
+                <input id="ex4" class="form-control" type="text" name="ex4">
             </div>   
             <div class="form-group">
-                <label>Desc JHS</label>
-                <input id="des_smp" class="form-control" type="text" name="des_smp">
+                <label>Description 4</label>
+                <input id="des4" class="form-control" type="text" name="des4">
             </div>   
             <div class="form-group">
-                <label>Major</label>
-                <input id="major_smp" class="form-control" type="text" name="major_smp">
+                <label>Photo 4</label>
+                <input id="gambar4" class="form-control" type="text" name="gambar4">
             </div>   
                 <input class="btn btn-primary" type="button" id="tombol" value="Simpan">   
         </form>
@@ -234,7 +234,7 @@
             $('#des3_').text(des3);
             $('#gambar3_').text(gambar3);
             $('#ex4_').text(ex4);
-            $('#des_gambar3_').text(des_gambar3);
+            $('#des4_').text(des4);
             $('#gambar4_').text(gambar4);
 
          
