@@ -6,7 +6,12 @@
     <title>Contact</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    
+    <style>
+        .form{
+            font-size : 20px;
+            color:white;
+        }
+    </style>
 </head>
 <body style="background-color:#336699">
     <?php   
@@ -33,7 +38,7 @@
     }            
     ?>
     <div class="container">
-        <h2 class="h2 py-5">Contact Me</h2>   
+        <h2 class="h2 py-5" style="color:white;">Contact Me</h2>   
     <!-- Ini Modal -->
         <div class="modal" id="pesan">
             <div class="modal-dialog">
@@ -95,7 +100,7 @@
             }
         
         ?>
-        <form id="myform" method="post" action="contact.php">
+        <form class="form" id="myform" method="post" action="contact.php">
             <div class="form-group">
                 <label>Name</label>
                 <input id="nama" class="form-control" type="text" name="nama">

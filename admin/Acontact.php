@@ -63,7 +63,7 @@
                         <td><?php echo $row['subjek']?></td>
                         <td><?php echo $row['isi']?></td>
                         <td>
-                            <a class="btn btn-danger delete_data" email="<?php echo $row['email']?>-<?php echo $row['nama']?>-<?php echo $row['subjek']?>-<?php echo $row['isi']?>" href="javascript:void(0);">Hapus</a>
+                            <a class="btn btn-danger delete_data" id="<?php echo $row['email']?>-<?php echo $row['nama']?>-<?php echo $row['subjek']?>-<?php echo $row['isi']?>" href="javascript:void(0);">Hapus</a>
                         </td>
                     </tr>
     <?php
