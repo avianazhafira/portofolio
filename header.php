@@ -1,5 +1,4 @@
-<nav class="navbar navbar-expand-sm bg-light navbar-light" style="position: -webkit-sticky;
-  position: sticky;">
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
   <a class="navbar-brand" href="index.php">Aviana's Portfolio</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
