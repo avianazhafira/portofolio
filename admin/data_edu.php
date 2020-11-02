@@ -42,7 +42,7 @@
     }            
     ?>
     <div class="container">
-        <h2>Pengisian About</h2>   
+        <h2>Pengisian Education</h2>   
     <!-- Ini Modal -->
         <div class="modal" id="pesan">
             <div class="modal-dialog">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Nov 2020 pada 11.30
+-- Waktu pembuatan: 02 Nov 2020 pada 15.11
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -44,7 +44,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `deskripsi`, `nama`, `ttl`, `alamat`, `email`, `telepon`, `foto`) VALUES
-(1, 'I am an Informatics student in Pembangunan Jaya University. I am a person who has a high competitive spirit that make me get 3.76 GPA and scholarships from Marga Jaya. My creativity and social spirit got me into the organization.', 'Aviana Zhafira Rustandiputri', '2000-02-20', 'Villa Dago Tol', 'avianazhafira@gmail.com', 818188227, 'aviana.jpg');
+(1, 'I am an Informatics student in Pembangunan Jaya University. I am a person who has a high competitive spirit that make me get 3.76 GPA and scholarships from Marga Jaya. My creativity and social spirit got me into the organization.', 'Aviana Zhafira', '2000-02-20', 'Villa Dago Tol', 'avianazhafira@gmail.com', 818188227, 'aviana.jpg');
 
 -- --------------------------------------------------------
 
@@ -65,6 +65,7 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`email`, `nama`, `subjek`, `isi`) VALUES
 ('bibi@gmail.com', 'Kevin', 'Testing', 'Semoga bisa deh testingnya Semoga bisa deh testingnya Semoga bisa deh testingnya Semoga bisa deh testingnya Semoga bisa deh testingnya Semoga bisa deh testingnya Semoga bisa deh testingnya Semoga bisa deh testingnya Semoga bisa deh testingnya'),
+('lili@gmail.com', 'Lili', 'tesss', 'tesss tesss tesss tesss tesss tesss tesss tesss tesss tesss tesss tesss tesss tessstesss tessstesss tesss tesss tesss tesss tesss tesss tesss tesss tesss tesss tesss tesss tesss'),
 ('nanawijayanti@gmail.com', 'Jay', 'Testing', 'Halo aku aviana lagi nyoba testing Halo aku aviana lagi nyoba testing Halo aku aviana lagi nyoba testing Halo aku aviana lagi nyoba testing Halo aku aviana lagi nyoba testing Halo aku aviana lagi nyoba testing');
 
 -- --------------------------------------------------------
@@ -190,13 +191,13 @@ ALTER TABLE `skills`
 -- AUTO_INCREMENT untuk tabel `about`
 --
 ALTER TABLE `about`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `education`
 --
 ALTER TABLE `education`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `experience`
@@ -208,7 +209,7 @@ ALTER TABLE `experience`
 -- AUTO_INCREMENT untuk tabel `skills`
 --
 ALTER TABLE `skills`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

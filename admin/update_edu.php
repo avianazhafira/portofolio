@@ -19,7 +19,7 @@
         $strsql = "UPDATE education SET kampus='".$kampus."', tahun_kampus='".$tahun_kampus."', des_kampus='".$des_kampus."', major_kampus='".$major_kampus."', sma='".$sma."', tahun_sma='".$tahun_sma."', des_sma='".$des_sma."' , major_sma='".$major_sma."' , smp='".$smp."' , tahun_smp='".$tahun_smp."' , des_smp='".$des_smp."' , major_smp='".$major_smp."' WHERE id='".$id."' ";
         $runSQL = mysqli_query($conn, $strsql);       
         if ($runSQL) {
-            header("location: Aresume.php");
+            header("location: Aedu.php");
         }  
         else {
             die; //tidak sukses;

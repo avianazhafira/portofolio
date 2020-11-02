@@ -35,7 +35,7 @@
         }
     } 
     else {
-        header("location:Aresume.php");
+        header("location:Aedu.php");
     }  
     $disableForm = isset($_GET['id'])?"enabled": "disabled";        
     ?>
