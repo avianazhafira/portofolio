@@ -33,7 +33,7 @@
     <div class="container experience-area">
                 <div class="row">
                     <div class="col-lg-12 text-center experience-title">
-                        <h1 class="text-uppercase title-text py-5">Experience</h1>
+                        <h1 class="text-uppercase title-text py-5" style="color:white;">Experience</h1>
                     </div>
                 </div>
                 <div class="container experience-list">

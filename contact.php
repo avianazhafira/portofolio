@@ -38,7 +38,7 @@
     }            
     ?>
     <div class="container">
-        <h2 class="h2 py-5" style="color:white;">Contact Me</h2>   
+        <h2 class="h2 py-5" style="color:white;">CONTACT ME</h2>   
     <!-- Ini Modal -->
         <div class="modal" id="pesan">
             <div class="modal-dialog">

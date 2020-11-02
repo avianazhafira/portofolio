@@ -17,8 +17,22 @@
             font-family: "Times New Roman", Times, serif;
         }
 
-        .education-title{
-            text-align: center;
+        .text-uppercase{
+            margin: 280px 100px;
+            color:white;
+            font-size:80px;
+            -webkit-animation: text-uppercase 1s ease-in-out infinite alternate;
+            -moz-animation: text-uppercase 1s ease-in-out infinite alternate;
+            animation: text-uppercase 1s ease-in-out infinite alternate;
+        }
+        @-webkit-keyframes text-uppercase {
+        from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #52595D, 0 0 40px #52595D, 0 0 50px #52595D, 0 0 60px #52595D, 0 0 70px #52595D;
+        }
+        
+        to {
+            text-shadow: 0 0 20px #fff, 0 0 30px #52595D, 0 0 40px #52595D, 0 0 50px #52595D, 0 0 60px #52595D, 0 0 70px #52595D, 0 0 80px #52595D;
+        }
         }
      </style>
 </head>
@@ -38,11 +52,12 @@
     ?>
     <div class="container-fluid">
         <div class="row">
-            <div class="education-title" style="color:white;">
+            <div class="col-lg-6 col-md-12">
                 <h1 class="text-uppercase pt-5">
-                 <span class="center"> Education </span> 
+                 <span> Education </span> 
                 </h1>
-
+            </div>
+            <div class="col-lg-6 col-md-12 pt-5">
                 <div class="row1"> 
                 <i class="fa fa-graduation-cap" aria-hidden="true"><?php echo $row['kampus']?> | <?php echo $row['tahun_kampus']?></i>
                 <p style="margin-left:25px">

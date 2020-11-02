@@ -15,8 +15,6 @@
             font-family: "Times New Roman", Times, serif;
         }
         .img{
-            height:300px;
-            width:150px;
             margin:auto;
             display:block;
         }
