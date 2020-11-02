@@ -22,12 +22,16 @@
     .h2{
         text-align:center;
         color:white;
-        animation-name: example;
-        animation-duration: 4s;
+        position:relative;
+        animation: type 5s steps(20);
+        overflow:hidden;
+        white-space:nowrap;
+        animation-iteration-count: infinite;
+        margin:auto;
     }
-    @keyframes example {
-        0%   {left:100px; top:0px;}
-        25%  {left:300px; top:0px;}
+    @keyframes type {
+        0%   {width:0ch;}
+        100%  {width:20ch;}
     }
     </style>
 </head>

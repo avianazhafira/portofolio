@@ -49,6 +49,7 @@
                 <?php echo $row['des_kampus']?> <br>
                 Major : <?php echo $row['major_kampus']?> 
                 </p>
+                <hr>
                 </div>
 
                 <div class="row1"> 
@@ -57,6 +58,7 @@
                 <?php echo $row['des_sma']?> <br>
                 Major : <?php echo $row['major_sma']?> 
                 </p>
+                <hr>
                 </div>
 
                 <div class="row1"> 
